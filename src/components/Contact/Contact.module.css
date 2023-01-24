@@ -1,0 +1,174 @@
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 50%;
+  width: fit-content;
+  min-width: 320px;
+  height: fit-content;
+  min-height: 350px;
+  padding: 10px;
+  border-radius: 5px;
+  /*transition details*/
+  transform: translateX(-50%) translateY(-50%) scale(100%);
+  transition: transform 0.5s ease-in-out;
+  transition-delay: 0.1s;
+  font-family: "Poiret One", cursive;
+  letter-spacing: 0.1em;
+  z-index: 5;
+}
+
+.hidden {
+  transform: translateX(-50%) translateY(-250%) scale(100%);
+  opacity: 0;
+}
+
+.light {
+  background-color: var(--dark-theme-highlight-2);
+  opacity: 1;
+  box-shadow: 0px 0px 4px var(--dark-color-5);
+}
+
+.dark {
+  background-color: var(--dark-theme-main);
+
+  opacity: 1;
+  color: var(--light-color-1);
+  box-shadow: 0px 0px 4px var(--light-color-5);
+}
+
+.container:before {
+  position: absolute;
+  content: "";
+  margin: auto;
+  height: 98%;
+  width: 98%;
+  border-radius: 5px;
+}
+
+.light.container:before {
+  border: 1px solid var(--dark-theme-main);
+}
+
+.container.dark:before {
+  border: 1px solid var(--dark-theme-highlight-4);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 100;
+  font-family: "righteous";
+  width: 60%;
+  max-width: 600px;
+}
+
+.light h2,
+.light .submit {
+  color: var(--dark-theme-main);
+}
+
+.dark h2,
+.dark .submit {
+  color: var(--dark-theme-highlight-3);
+  opacity: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 90%;
+  max-width: 600px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+  max-width: 400px;
+}
+
+.submit {
+  font-size: 1.7em;
+  background-color: transparent;
+  border: none;
+  padding: 5px 12px;
+  margin: 0px 20px;
+  color: inherit;
+  font-family: "righteous";
+  transition: all 0.5s ease;
+  animation: all 0.5s;
+  z-index: 10;
+}
+
+.submit:hover {
+  transform: translate(-2px, -2px);
+  cursor: pointer;
+}
+
+.light .submit:hover {
+  color: var(--dark-theme-highlight-2);
+  background-color: var(--dark-theme-main);
+  box-shadow: 2px 2px 4px var(--dark-theme-highlight-3);
+}
+
+.dark .submit:hover {
+  box-shadow: 2px 2px 4px var(--dark-theme-highlight-3);
+  color: var(--dark-theme-main);
+  background-color: var(--dark-theme-highlight-2);
+  text-shadow: 0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3);
+}
+
+.sentConfirmation,
+.sentError {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.sentConfirmation {
+  color: hsl(120, 100%, 80%);
+}
+
+.sentError {
+  color: hsl(0, 100%, 80%);
+}
+
+@media (max-width: 900px) {
+  h2 {
+    font-size: 1.3em;
+  }
+
+  form {
+    font-size: 1em;
+  }
+
+  .sentConfirmation,
+  .sentError {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1em;
+  }
+
+  form {
+    font-size: 0.7em;
+  }
+
+  .sentConfirmation,
+  .sentError {
+    font-size: 0.7em;
+  }
+}

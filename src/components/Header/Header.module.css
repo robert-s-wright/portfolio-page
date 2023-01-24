@@ -1,0 +1,318 @@
+.container {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  font-family: "righteous";
+  font-family: "Limelight", cursive;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  transform: translateY(0%);
+  transition: 0.5s all ease;
+  opacity: 1;
+  background-color: var(--test-color);
+  z-index: 5;
+}
+
+.dark.opaque,
+.dark .opaque {
+  background-color: var(--dark-theme-main);
+  box-shadow: -2px 2px 2px var(--dark-theme-highlight-1);
+}
+
+.light.opaque,
+.light .opaque {
+  background-color: var(--dark-theme-highlight-2);
+  box-shadow: -2px 2px 2px var(--dark-theme-highlight-1);
+}
+
+.light {
+  color: var(--dark-theme-main);
+}
+
+.dark {
+  color: var(--dark-theme-highlight-3);
+}
+
+.hideHeader {
+  transform: translateY(-100%);
+  box-shadow: none !important;
+}
+
+/*nav*/
+
+.mobile nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  overflow: hidden;
+  transition: 0.5s all ease;
+}
+
+.desktop nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+nav.navHidden {
+  width: 0px;
+  transition: 0.5s all ease;
+  transition-delay: 0.3s;
+}
+
+.navBtn {
+  background-color: transparent;
+  border: none;
+  padding: 5px 12px;
+  margin: 0px 20px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.6em;
+  letter-spacing: 0.1em;
+  text-shadow: 0px 0px 2px var(--dark-theme-highlight-3);
+  transition: all 0.5s;
+  animation: 0.5s ease-in nav-load;
+  text-decoration: none;
+}
+
+.mobile .navBtn {
+  margin: 5px 20px;
+}
+
+.navBtn:hover {
+  transform: translate(-2px, -2px);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.light .navBtn:hover {
+  color: var(--dark-theme-highlight-2);
+  background-color: var(--dark-theme-main);
+  box-shadow: 2px 2px 4px var(--dark-theme-highlight-3);
+
+  text-shadow: 0px 0px 1px var(--dark-theme-highlight-3),
+    0px 0px 1px var(--dark-theme-highlight-3),
+    0px 0px 1px var(--dark-theme-highlight-3),
+    0px 0px 1px var(--dark-theme-highlight-3),
+    0px 0px 1px var(--dark-theme-highlight-3),
+    0px 0px 1px var(--dark-theme-highlight-3),
+    0px 0px 1px var(--dark-theme-highlight-3),
+    0px 0px 1px var(--dark-theme-highlight-3);
+}
+
+.dark .navBtn:hover {
+  color: var(--dark-theme-main);
+  background-color: var(--dark-theme-highlight-2);
+  box-shadow: 2px 2px 4px var(--dark-theme-highlight-3);
+  text-shadow: 0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3),
+    0px 0px 2px var(--dark-theme-highlight-3);
+}
+
+/*hamburger nav button*/
+
+.hamburgerBtn {
+  padding: 20px 10px;
+  margin: auto 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  transition: 0.5s all ease;
+  overflow: hidden;
+}
+
+.hamburgerLine,
+.hamburgerLine:before,
+.hamburgerLine:after {
+  width: 40px;
+  height: 6px;
+  border-radius: 50vh;
+  transition: all 0.5s ease-in-out;
+}
+
+.dark .hamburgerLine,
+.dark .hamburgerLine:before,
+.dark .hamburgerLine:after {
+  background-color: var(--dark-theme-highlight-3);
+}
+
+.light .hamburgerLine,
+.light .hamburgerLine:before,
+.light .hamburgerLine:after {
+  width: 40px;
+  height: 6px;
+  border-radius: 2px;
+  background-color: var(--dark-theme-main);
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburgerBtn:hover {
+  cursor: pointer;
+  transform: translate(-2px, -2px);
+}
+
+.dark .hamburgerBtn:hover {
+  background-color: var(--dark-theme-highlight-2);
+  box-shadow: 2px 2px 4px var(--dark-theme-highlight-3);
+}
+
+.light .hamburgerBtn:hover {
+  background-color: var(--dark-theme-main);
+  box-shadow: 2px 2px 4px var(--dark-theme-highlight-3);
+}
+
+.dark .hamburgerBtn:hover .hamburgerLine,
+.dark .hamburgerBtn:hover .hamburgerLine:before,
+.dark .hamburgerBtn:hover .hamburgerLine:after {
+  background-color: var(--dark-theme-main);
+}
+
+.light .hamburgerBtn:hover .hamburgerLine,
+.light .hamburgerBtn:hover .hamburgerLine:before,
+.light .hamburgerBtn:hover .hamburgerLine:after {
+  background-color: var(--dark-theme-highlight-2);
+}
+
+.hamburgerLine:before,
+.hamburgerLine:after {
+  position: absolute;
+  content: "";
+}
+
+.hamburgerLine:before {
+  transform: translate(-50%, -160%);
+}
+
+.hamburgerLine:after {
+  transform: translate(-50%, 160%);
+}
+
+.navOpen .hamburgerLine {
+  transform: translateX(-150%);
+}
+
+.navOpen .hamburgerLine:before {
+  transform: translate(100%, 0%) rotate(225deg);
+}
+
+.navOpen .hamburgerLine:after {
+  transform: translate(100%, 0%) rotate(-225deg);
+}
+
+/*container div for light/dark mode*/
+
+.modeSelector {
+  display: flex;
+  justify-content: flex-end;
+  height: 70px;
+  padding: 0px 10px;
+  animation: 1s ease-in mode-load;
+  padding: 5px 12px;
+  margin: 0px 20px;
+}
+
+.dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px 0px;
+  padding: 0px 10px;
+  color: var(--dark-theme-highlight-4);
+}
+
+/*light mode transitions*/
+
+.start {
+  margin-top: 0px;
+  margin-bottom: auto;
+}
+
+.end {
+  margin-bottom: 0px;
+  margin-top: auto;
+  transform: rotate(25deg);
+}
+
+.enterDone {
+  opacity: 1;
+  transition: all 1500ms;
+}
+.enterActive {
+  opacity: 0;
+}
+.exitActive {
+  opacity: 1;
+}
+.exitDone {
+  opacity: 0;
+}
+
+/*light/dark mode text */
+
+.modes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.modeButton {
+  transition: all 500ms ease;
+}
+
+.modeButton:hover {
+  cursor: pointer;
+}
+
+.light .modeButton {
+  color: var(--dark-theme-highlight-4);
+}
+
+.dark .modeButton {
+  color: var(--dark-theme-highlight-2);
+}
+
+.light .modeButton:first-of-type:hover {
+  color: var(--dark-theme-highlight-3);
+}
+
+.light .modeButton:last-of-type:hover {
+  color: var(--dark-theme-main);
+}
+
+.modeButton:first-of-type:hover {
+  color: var(--dark-theme-highlight-3);
+}
+
+.modeButton:last-of-type:hover {
+  color: var(--dark-theme-highlight-4);
+}
+
+@keyframes nav-load {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes mode-load {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}

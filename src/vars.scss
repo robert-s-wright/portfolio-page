@@ -1,0 +1,45 @@
+$light-color-1: hsla(115, 100%, 95%);
+$light-color-2: hsl(196, 100%, 95%);
+$light-color-3: hsl(45, 100%, 95%);
+$light-color-4: hsl(0, 100%, 95%);
+$light-color-5: hsl(175, 100%, 95%);
+
+$dark-color-2: hsl(196, 20%, 12%);
+$dark-color-3: hsl(40, 20%, 12%);
+$dark-color-4: hsl(115, 100%, 12%);
+$dark-color-5: hsl(175, 100%, 12%);
+/*$dark-color-1: hsl(115, 20%, 12%); */
+
+/*dark theme */
+$dark-theme-main: #262625;
+$dark-theme-main-1: #3a3b40;
+$dark-theme-main-2: #261201;
+$dark-theme-highlight-1: #737372;
+$dark-theme-highlight-2: #f2f2f2;
+$dark-theme-highlight-3: #f2e6a7;
+$dark-theme-highlight-4: #a69a76;
+/*$dark-theme-highlight-5: #0dff21; */
+
+/*light theme */
+
+$light-theme-main: #011f26;
+$light-theme-highlight-1: #a5a692;
+$light-theme-highlight-2: #bfb78f;
+$light-theme-highlight-3: #025e73;
+$light-theme-highlight-4: #f2a71b;
+
+$medium-color-1: hsla(115, 12%, 50%);
+
+$strong-color-4: hsl(0, 100%, 70%);
+
+$shadow-color-1: hsla(115, 100%, 80%);
+
+:export {
+  darkMain: $dark-theme-main;
+  darkMain1: $dark-theme-main-1;
+  darkMain2: $dark-theme-main-2;
+  darkHighlight1: $dark-theme-highlight-1;
+  darkHighlight2: $dark-theme-highlight-2;
+  darkHighlight3: $dark-theme-highlight-3;
+  darkHighlight4: $dark-theme-highlight-4;
+}

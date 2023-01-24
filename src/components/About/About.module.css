@@ -1,0 +1,61 @@
+.container {
+  transition: all 1s ease;
+  color: var(--dark-theme-highlight-2);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 50px;
+  gap: 10px;
+}
+
+.container h1 {
+  margin: 0;
+}
+
+.light {
+  color: var(--dark-color-2);
+  background-color: var(--dark-theme-highlight-1);
+}
+
+.dark {
+  color: var(--light-color-2);
+  background-color: var(--dark-theme-main-1);
+}
+
+.content {
+  padding: 20px;
+  font-weight: 600;
+  font-size: calc(0.7em + 1vw);
+  font-family: "Poiret One", cursive;
+  letter-spacing: 0.05em;
+}
+
+.light .content,
+.light .skills {
+  background-color: var(--dark-theme-highlight-2);
+  box-shadow: 2px 2px 4px var(--dark-theme-main);
+}
+
+.dark .content,
+.dark .skills {
+  background-color: var(--dark-theme-main);
+  box-shadow: 2px 2px 4px var(--dark-theme-highlight-1);
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: calc(1em + 3vw);
+  gap: 5vw;
+  padding: 10px;
+}
+
+.light .skills {
+  color: var(--dark-theme-highlight-1);
+}
+
+.dark .skills {
+  color: var(--dark-theme-highlight-4);
+}
